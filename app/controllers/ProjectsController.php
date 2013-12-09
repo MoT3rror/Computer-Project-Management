@@ -119,5 +119,35 @@ class ProjectsController extends \lithium\action\Controller
 	{
 
 	}
+
+	public function recommend()
+	{
+		$project = $this->getProjectInfo($this->request->params['id']);
+
+		if($this->request->data)
+		{
+			$project->recommend = $this->request->data['recommend'];
+			$project->save();
+
+			$this->redirect(array('Projects::view', 'id'	=>	$project->projectid));
+		}
+
+		return compact('project');
+	}
+
+	public function virus()
+	{
+		$project = $this->getProjectInfo($this->request->params['id']);
+
+		if($this->request->data)
+		{
+			$project->viruses = $this->request->data['viruses'];
+			$project->save();
+
+			$this->redirect(array('Projects::view', 'id'	=>	$project->projectid));
+		}
+
+		return compact('project');
+	}
 }
 ?>

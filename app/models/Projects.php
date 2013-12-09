@@ -51,6 +51,16 @@ class Projects extends \lithium\data\Model {
 			'length'	=>	45,
 			'default'	=>	null,
 		),
+		'recommend'		=>	array (
+			'type'		=>	'text',
+			'null'		=>	false,
+		),
+		'viruses'		=>	array (
+			'type'		=>	'integer',
+			'length'	=>	20,
+			'default'	=>	0,
+			'null'		=>	true,
+		),
 	);
 
 	public $_meta = array('key' => 'projectid');

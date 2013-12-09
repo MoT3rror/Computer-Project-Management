@@ -1,9 +1,13 @@
 <span><?php echo $this->html->link('Add Log', array(
     'Projects::log',
     'id'   =>  $project->projectid)
-) ?></span>
+) ?></span> | 
 <span><?= $this->html->link('Recommendation', array (
-    'Project::recommend',
+    'Projects::recommend',
+    'id'    =>  $project->projectid,
+)) ?></span> |
+<span><?= $this->html->link('Viruses', array (
+    'Projects::virus',
     'id'    =>  $project->projectid,
 )) ?></span>
 <br /><br />
@@ -44,6 +48,13 @@
         <td valign="top">Description:</td>
         <td><?php echo nl2br($project->description) ?></td>
     </tr>
+    <tr>
+        <td>Recommendation: </td>
+        <td><?= $project->recommend ?></td>
+    </tr>
+    <tr>
+        <td>Viruses: </td>
+        <td><?= $project->viruses ?></td>
 </table>
 <br /><br />
 <table align="center" border="1" width="100%">

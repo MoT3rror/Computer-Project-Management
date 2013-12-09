@@ -1,6 +1,14 @@
 <?php
 $this->title('Home');
+
+$total = 0;
+foreach($projects AS $project)
+{
+	$total += $project->viruses;
+}
 ?>
+<h1><?= $total ?> Viruses Defeated</h1>
+
 
 <table border="1" width="80%" align="center">
 	<tr>
